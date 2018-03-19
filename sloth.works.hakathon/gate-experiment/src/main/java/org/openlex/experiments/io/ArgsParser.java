@@ -17,11 +17,11 @@ public class ArgsParser implements GATEPathBundle {
 	private String pathToOriginalOutput;
 	private String[] args;
 
-	public ArgsParser(String[] args) {
+	ArgsParser(String[] args) {
 		this.args = args;
 	}
 
-	public boolean handleArgs() {
+	boolean handleArgs() {
 		Options options = new Options();
 		Option gatePath = new Option("p", "gatepath", true, "GATE path");
 		gatePath.setRequired(true);
@@ -61,11 +61,6 @@ public class ArgsParser implements GATEPathBundle {
 	@Override
 	public String getPathToGATEPlugins() {
 		return pathToGATEPlugins;
-	}
-
-	@Override
-	public String getPathToResources() {
-		return pathToResources;
 	}
 
 	@Override

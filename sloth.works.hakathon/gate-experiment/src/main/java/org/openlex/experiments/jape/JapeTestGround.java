@@ -7,21 +7,17 @@ import gate.FeatureMap;
 import gate.jape.ActionContext;
 import gate.jape.JapeException;
 
-// Import: block code will be embedded here
-class JapeExperiments implements java.io.Serializable, gate.jape.RhsAction {
+/**
+ * This is a testground class for JAPE rules.
+ * It is auxiliary and is needed due to the specifics of GATE and its ability to
+ * execute java but lack of any aid to write/test it on the corpus out of GATE.
+ */
+class JapeTestGround implements java.io.Serializable, gate.jape.RhsAction {
 	private static final long serialVersionUID = 7825106315666933111L;
 	private ActionContext ctx;
 
     @Override
 	public ActionContext getActionContext() {
-        return null;
-    }
-
-    public String ruleName() {
-        return null;
-    }
-
-    public String phaseName() {
         return null;
     }
 
@@ -67,22 +63,6 @@ class JapeExperiments implements java.io.Serializable, gate.jape.RhsAction {
             e.printStackTrace();
         }
 
-//        AnnotationSet subset = inputAS.getCovering("AlineaContent", doc..getStartNode().getOffset(),
-//                pointCont.getEndNode().getOffset());
-//        if (!subset.isEmpty()) {
-//            Annotation alinea = subset.iterator().next();
-//            FeatureMap features = pointCont.getFeatures();
-//            features.put("article_number", alinea.getFeatures().get("article_number"));
-//            features.put("alinea_number", alinea.getFeatures().get("number"));
-//        } else {
-//            AnnotationSet subset2 = inputAS.getCovering("ArticleContent", pointCont.getStartNode().getOffset(),
-//                    pointCont.getEndNode().getOffset());
-//            if (!subset2.isEmpty()) {
-//                Annotation article = subset.iterator().next();
-//                FeatureMap features = pointCont.getFeatures();
-//                features.put("article_number", article.getFeatures().get("number"));
-//            }
-//        }
     }
 
     @Override

@@ -1,18 +1,23 @@
-package org.openlex.experiments.io;
+package org.openlex.experiments.model.diff;
 
 import gate.Document;
 
 /**
  * Created by mateva on 21.01.18.
  */
-public class Diff {
-	String alNum;
-	String articleNum;
-	String what;
-	String withWhat;
-	Document doc;
+public class Substitution {
 
-	public Diff(String alNum, String articleNum, String what, String withWhat, Document doc) {
+    public static final String RULE = "RuleSubstitute";
+    public static final String WHAT = "what";
+    public static final String WITH_WHAT = "what";
+
+	private String alNum;
+	private String articleNum;
+	private String what;
+	private String withWhat;
+	private Document doc;
+
+	public Substitution(String alNum, String articleNum, String what, String withWhat, Document doc) {
 		this.alNum = alNum;
 		this.articleNum = articleNum;
 		this.what = what;
@@ -56,4 +61,8 @@ public class Diff {
 		this.withWhat = withWhat;
 	}
 
+	@Override
+	public String toString() {
+		return "Article " + articleNum + ", Alinea " + alNum + " : substitute " + withWhat + " with " + withWhat;
+	}
 }

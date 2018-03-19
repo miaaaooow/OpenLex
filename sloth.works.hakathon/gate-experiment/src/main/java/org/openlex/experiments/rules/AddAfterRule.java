@@ -5,7 +5,7 @@ package org.openlex.experiments.rules;
  */
 public class AddAfterRule implements Rule {
 
-    public String apply(String original, String what, String withWhat) {
-        return original.replace(what, what + withWhat);
+    public String apply(String original, String what, String afterWhat) {
+        return original.replace(what, what + afterWhat);
     }
 }

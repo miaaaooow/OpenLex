@@ -1,15 +1,13 @@
 package org.openlex.experiments.io;
 
 public interface GATEPathBundle {
-	public String getPathToGATE();
+	String getPathToGATE();
 
-	public String getPathToGATEPlugins();
+	String getPathToGATEPlugins();
 
-	public String getPathToResources();
+	String getPathToFileResources();
 
-	public String getPathToFileResources();
+	String getPathToResultOutput();
 
-	public String getPathToResultOutput();
-
-	public String getPathToOriginalOutput();
+	String getPathToOriginalOutput();
 }
