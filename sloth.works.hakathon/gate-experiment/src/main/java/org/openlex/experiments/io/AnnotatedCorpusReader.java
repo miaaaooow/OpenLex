@@ -1,27 +1,16 @@
 package org.openlex.experiments.io;
 
+import gate.*;
+import gate.util.GateException;
+import gate.util.InvalidOffsetException;
+import org.openlex.experiments.model.Structure;
+import org.openlex.experiments.model.diff.Substitution;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import org.openlex.experiments.model.Structure;
-import org.openlex.experiments.model.diff.Substitution;
-
-import gate.Annotation;
-import gate.AnnotationSet;
-import gate.DataStore;
-import gate.Document;
-import gate.Factory;
-import gate.FeatureMap;
-import gate.Gate;
-import gate.util.GateException;
-import gate.util.InvalidOffsetException;
+import java.util.*;
 
 /**
  * Created by mateva on 21.01.18.
@@ -76,7 +65,7 @@ public class AnnotatedCorpusReader {
     private void processSubstitutionRule(Document amendmentDoc, Set<Substitution> resultSubstitutions) {
         for (Annotation a : amendmentDoc.getAnnotations().get(Substitution.RULE)) {
             FeatureMap map = a.getFeatures();
-            String alNum = (String) map.get(Structure.ALINEA_NUMBER;
+            String alNum = (String) map.get(Structure.ALINEA_NUMBER);
             String articleNum = (String) map.get(Structure.ARTICLE_NUMBER);
             String what = (String) map.get(Substitution.WHAT);
             String withWhat = (String) map.get(Substitution.WITH_WHAT);
